@@ -1,5 +1,18 @@
 import { User } from "../../modules/users/interfaces/users.interface";
 
+/**
+ * Listado de usuarios del sistema.
+ *
+ * Esta constante representa un conjunto de datos de prueba (mock)
+ * que simula la respuesta de un backend REST.
+ *
+ * Se utiliza principalmente para:
+ * - Pruebas unitarias
+ * - Prácticas de componentes
+ * - Ejercicios de arquitectura modular
+ *
+ * @type {User[]}
+ */
 export const USERS: User[] = [
   {
     id: 1,

@@ -1,5 +1,16 @@
 import { Product } from "../../modules/products/interfaces/products.interface";
 
+/**
+ * Listado de productos disponibles en el sistema.
+ *
+ * Esta constante simula una fuente de datos (mock) que representa
+ * información básica de productos, utilizada para:
+ * - Pruebas unitarias
+ * - Desarrollo sin backend
+ * - Ejercicios académicos
+ *
+ * @type {Product[]}
+ */
 export const PRODUCTS: Product[] = [
   {
     id: 1,
