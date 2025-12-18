@@ -1,59 +1,115 @@
-# AngularModulesTemplate
+# 🧪 Taller: Módulos en Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+- Este proyecto fue generado utilizando [Angular CLI](https://github.com/angular/angular-cli) 20.3.14.
 
-## Development server
+- El objetivo del taller es practicar la creación y organización de módulos y componentes en una aplicación Angular.
 
-To start a local development server, run:
+## 📋 Requisitos Previos
 
-```bash
-ng serve
+Antes de iniciar, asegúrate de tener instaladas las siguientes herramientas:
+
+- Node.js
+- npm
+- Angular CLI
+- Git
+- Visual Studio Code
+
+Puedes verificar Angular CLI en consola con: ```ng version```
+
+## ▶️ Iniciar el Proyecto en Modo Desarrollo
+
+Sigue estos pasos para ejecutar el proyecto localmente:
+
+### 1️⃣ Abrir la consola
+
+Ubícate en la raíz del proyecto (donde se encuentra el archivo package.json).
+
+### 2️⃣ Instalar dependencias
+
+```npm i```
+
+### 3️⃣ Ejecutar el proyecto
+
+```npm run start``` o ```ng serve```
+
+### 4️⃣ Abrir en el navegador
+
+Cuando el servidor esté en ejecución, abre un navegador y accede a: `http://localhost:4200/`
+
+
+## 🧪 Pruebas Unitarias
+
+El proyecto utiliza Jest para la ejecución de pruebas unitarias.
+
+### ▶️ Ejecutar pruebas una sola vez
+
+```npm run test```
+
+### 🔁 Ejecutar pruebas en modo watch
+
+Este modo vuelve a ejecutar las pruebas cada vez que se detecta un cambio en el código.
+
+```npm run test:watch```
+
+
+## ⚙️ Generación de Archivos con Angular CLI
+A continuación se presentan los comandos más utilizados para generar módulos y componentes.
+
+### 📦 Generar un módulo con archivo de rutas
+
+```ng g m [ruta]/[nombre-modulo] --routing```
+
+#### Ejemplo:
+
+```ng g m modules/users --routing```
+
+#### Archivos Generados
+
+```
+src/app/modules/users
+├──users.module.ts
+└──users-routing.module.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 🧩 Generar un componente (con carpeta propia)
 
-## Code scaffolding
+```ng g c [ruta]/[nombre-componente] --standalone=false```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+#### Ejemplo:
 
-```bash
-ng generate component component-name
+```ng g c modules/users/components/table-users --standalone=false```
+
+#### Archivos Generados
+
+```
+src/app/modules/users/components/table-users/
+├── table-users.html
+├── table-users.scss
+├── table-users.spec.ts
+└── table-users.ts
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 📄 Generar un componente sin carpeta (--flat)
 
-```bash
-ng generate --help
+```ng g c [ruta]/[nombre-componente] --standalone=false --flat```
+
+#### Ejemplo:
+
+```ng g c modules/users/components/table-users/table-users.component --standalone=false --flat```
+
+#### Archivos Generados
+
+```
+src/app/modules/users/components/table-users/
+└──table-users.component.html
+└──table-users.component.scss
+└──table-users.component.spec.ts
+└──table-users.component.ts
 ```
 
-## Building
+### 🎓 Observaciones Importantes
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- En este taller NO se utilizan componentes standalone
+- Todos los componentes deben pertenecer a un NgModule
+- Mantener una estructura clara favorece la escalabilidad y mantenibilidad
+- Usar Angular CLI evita errores de configuración manual
