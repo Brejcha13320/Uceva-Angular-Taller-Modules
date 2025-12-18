@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { BadgeType, BadgeTypeText } from '../../interfaces/badge.interface';
+import { BadgeType, BadgeTypeText } from '@modules-shared/interfaces/badge.interface';
 
 @Component({
   selector: 'app-badge',
+  template: `<span class="badge" [class]="getClass()" >{{ text }}</span>`,
   standalone: false,
-  templateUrl: './badge.component.html',
-  styleUrl: './badge.component.scss',
 })
 export class BadgeComponent {
   @Input() text: string = '';

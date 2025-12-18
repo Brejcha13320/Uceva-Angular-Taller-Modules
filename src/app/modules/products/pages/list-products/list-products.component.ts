@@ -4,13 +4,11 @@ import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-list-products.component',
+  template: `<app-table-products [products]="products" ></app-table-products>`,
   standalone: false,
-  templateUrl: './list-products.component.html',
-  styleUrl: './list-products.component.scss',
 })
 export class ListProductsComponent {
   products: Product[] = [];
-
   private productsService = inject(ProductsService);
 
   ngOnInit(): void {
@@ -22,5 +20,4 @@ export class ListProductsComponent {
       error: (error) => console.error(error),
     })
   }
-
 }

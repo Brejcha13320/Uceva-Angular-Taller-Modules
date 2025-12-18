@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular-Modules-Template": {
+    "Uceva-Angular-Talle-Modules": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -68,10 +68,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Angular-Modules-Template:build:production"
+              "buildTarget": "Uceva-Angular-Talle-Modules:build:production"
             },
             "development": {
-              "buildTarget": "Angular-Modules-Template:build:development"
+              "buildTarget": "Uceva-Angular-Talle-Modules:build:development"
             }
           },
           "defaultConfiguration": "development"

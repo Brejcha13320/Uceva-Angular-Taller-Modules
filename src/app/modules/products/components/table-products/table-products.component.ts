@@ -1,12 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { Category, Product } from '../../interfaces/products.interface';
-import { BadgeType } from '../../../../shared/interfaces/badge.interface';
+import { Category, Product } from '@modules-products/interfaces/products.interface';
+import { BadgeType } from '@modules-shared/interfaces/badge.interface';
 
 @Component({
   selector: 'app-table-products',
-  standalone: false,
   templateUrl: './table-products.component.html',
-  styleUrl: './table-products.component.scss',
+  standalone: false,
 })
 export class TableProductsComponent {
   @Input() products: Product[] = [];
@@ -17,5 +16,4 @@ export class TableProductsComponent {
     'Lacteos': 'primary',
     'Verduras': 'success',
   }
-
 }

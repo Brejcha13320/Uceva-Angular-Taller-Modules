@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,4 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.component.scss',
   standalone: false,
 })
-export class AppComponent {
-  protected readonly title = signal('Angular-Modules-Template');
-}
+export class AppComponent { }

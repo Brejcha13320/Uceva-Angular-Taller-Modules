@@ -2,10 +2,9 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-icon',
-  templateUrl: './icon.component.html',
-  styleUrl: './icon.component.scss',
+  template: `<i class="bi" [class]="'bi-' + icon"></i>`,
   standalone: false,
 })
 export class IconComponent {
-  @Input() icon: string = '';
+  @Input({ required: true }) icon: string = '';
 }
