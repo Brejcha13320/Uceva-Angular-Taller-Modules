@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { BadgeType } from '@modules-shared/interfaces/badge.interface';
-import { Engineering, User } from '@modules-users/interfaces/users.interface';
+import { BadgeType } from '../../../shared/interfaces/badge.interface';
+import { Engineering, User } from '../../interfaces/users.interface';
 
 @Component({
   selector: 'app-table-users',

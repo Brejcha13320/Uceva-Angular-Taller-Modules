@@ -14,13 +14,6 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
-    "paths": {
-      "@core-config/*": ["./src/app/core/config/*"],
-      "@core-interfaces/*": ["./src/app/core/interfaces/*"],      
-      "@modules-products/*": ["./src/app/modules/products/*"],
-      "@modules-users/*": ["./src/app/modules/users/*"],   
-      "@modules-shared/*": ["./src/app/modules/shared/*"],
-    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

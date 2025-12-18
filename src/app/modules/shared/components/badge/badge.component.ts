@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BadgeType, BadgeTypeText } from '@modules-shared/interfaces/badge.interface';
+import { BadgeType, BadgeTypeText } from '../../interfaces/badge.interface';
 
 @Component({
   selector: 'app-badge',

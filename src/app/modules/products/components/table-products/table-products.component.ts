@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Category, Product } from '@modules-products/interfaces/products.interface';
-import { BadgeType } from '@modules-shared/interfaces/badge.interface';
+import { Category, Product } from '../../interfaces/products.interface';
+import { BadgeType } from '../../../shared/interfaces/badge.interface';
 
 @Component({
   selector: 'app-table-products',

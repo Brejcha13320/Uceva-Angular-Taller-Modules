@@ -13,10 +13,7 @@ export class ListProductsComponent {
 
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe({
-      next: (products) => {
-        this.products = products;
-        console.log(products);
-      },
+      next: (products) => this.products = products,
       error: (error) => console.error(error),
     })
   }

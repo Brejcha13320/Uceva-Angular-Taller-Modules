@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { User } from '@modules-users/interfaces/users.interface';
-import { UsersService } from '@modules-users/services/users.service';
+import { User } from '../../interfaces/users.interface';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-list-users',
@@ -13,10 +13,7 @@ export class ListUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.usersService.getAllUsers().subscribe({
-      next: (users) => {
-        this.users = users;
-        console.log(users);
-      },
+      next: (users) => this.users = users,
       error: (error) => console.error(error),
     })
   }

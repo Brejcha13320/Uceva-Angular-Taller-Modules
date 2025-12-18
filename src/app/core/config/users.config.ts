@@ -1,4 +1,4 @@
-import { User } from "@modules-users/interfaces/users.interface";
+import { User } from "../../modules/users/interfaces/users.interface";
 
 export const USERS: User[] = [
   {

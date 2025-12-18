@@ -14,7 +14,7 @@ describe('App', () => {
     }).compileComponents();
   });
 
-  it('Deberia crear la app', () => {
+  it('deberia crear la app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
