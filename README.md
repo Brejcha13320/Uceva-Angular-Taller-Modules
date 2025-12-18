@@ -51,6 +51,12 @@ Este modo vuelve a ejecutar las pruebas cada vez que se detecta un cambio en el 
 
 ```npm run test:watch```
 
+### 🔁 Ejecutar coverage de pruebas
+
+Este modo permite ejecutar todas las pruebas unitarias del proyecto y generar un reporte de cobertura, el cual muestra qué porcentaje del código fuente está siendo validado por las pruebas.
+
+```npm run test:coverage```
+
 
 ## ⚙️ Generación de Archivos con Angular CLI
 A continuación se presentan los comandos más utilizados para generar módulos y componentes.
@@ -101,9 +107,9 @@ src/app/modules/users/components/table-users/
 
 ```
 src/app/modules/users/components/table-users/
-└──table-users.component.html
-└──table-users.component.scss
-└──table-users.component.spec.ts
+├──table-users.component.html
+├──table-users.component.scss
+├──table-users.component.spec.ts
 └──table-users.component.ts
 ```
 
