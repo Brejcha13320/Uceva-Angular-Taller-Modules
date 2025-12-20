@@ -57,6 +57,13 @@ Este modo permite ejecutar todas las pruebas unitarias del proyecto y generar un
 
 ```npm run test:coverage```
 
+### 📘 Generar documentación con Compodoc
+
+Este modo permite generar la documentación técnica del proyecto a partir de los comentarios JSDoc en el código fuente, facilitando la visualización de la API del Design System y sus componentes.
+
+El comando genera un sitio estático con la documentación del proyecto, incluyendo componentes, interfaces, tipos, módulos y diagramas de dependencias.
+
+```npm run compodoc```
 
 ## ⚙️ Generación de Archivos con Angular CLI
 A continuación se presentan los comandos más utilizados para generar módulos y componentes.
