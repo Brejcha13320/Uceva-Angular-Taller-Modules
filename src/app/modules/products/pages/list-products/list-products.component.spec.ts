@@ -20,7 +20,6 @@ describe('ListProductsComponent', () => {
 
     fixture = TestBed.createComponent(ListProductsComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     productsService = TestBed.inject(ProductsService);
   });
 
@@ -29,20 +28,20 @@ describe('ListProductsComponent', () => {
   });
 
   it('debería llamar a getAllProducts al iniciar', () => {
-    const spyGetAllUsers = jest.spyOn(productsService, 'getAllProducts').mockReturnValue(of(PRODUCTS));
-    component.ngOnInit();
-    expect(spyGetAllUsers).toHaveBeenCalled();
+    const spyGetAllProducts = jest.spyOn(productsService, 'getAllProducts').mockReturnValue(of(PRODUCTS));
+    fixture.detectChanges();
+    expect(spyGetAllProducts).toHaveBeenCalled();
   });
 
   it('debería asignar los productos recibidos del servicio', () => {
     jest.spyOn(productsService, 'getAllProducts').mockReturnValue(of(PRODUCTS));
-    component.ngOnInit();
+    fixture.detectChanges();
     expect(component.products).toEqual(PRODUCTS);
   });
 
   it('debería pasar los productos al componente table-products', () => {
     jest.spyOn(productsService, 'getAllProducts').mockReturnValue(of(PRODUCTS));
-    component.ngOnInit();
+    fixture.detectChanges();
     const tableComponent = fixture.debugElement
       .query(By.directive(TableProductsComponent))
       .componentInstance;
@@ -56,7 +55,7 @@ describe('ListProductsComponent', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     jest.spyOn(productsService, 'getAllProducts').mockReturnValue(throwError(() => errorResponse));
 
-    component.ngOnInit();
+    fixture.detectChanges();
 
     expect(productsService.getAllProducts).toHaveBeenCalled();
     expect(console.error).toHaveBeenCalledWith(errorResponse);

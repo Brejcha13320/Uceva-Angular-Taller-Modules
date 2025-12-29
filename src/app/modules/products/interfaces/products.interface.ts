@@ -26,7 +26,7 @@ export interface Product {
     name: string;
 
     /** Categoría del producto */
-    category: Category;
+    category: ProductCategory;
 
     /** Precio del producto en pesos */
     price: number;
@@ -46,7 +46,7 @@ export interface Product {
  *
  * @example
  * ```ts
- * const categoria: Category = 'Frutas';
+ * const categoria: ProductCategory = 'Frutas';
  * ```
  */
-export type Category = 'Lacteos' | 'Carnes' | 'Frutas' | 'Verduras';
+export type ProductCategory = 'Lacteos' | 'Carnes' | 'Frutas' | 'Verduras';

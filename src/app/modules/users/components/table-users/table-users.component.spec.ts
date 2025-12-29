@@ -16,6 +16,7 @@ describe('TableUsersComponent', () => {
 
     fixture = TestBed.createComponent(TableUsersComponent);
     component = fixture.componentInstance;
+    component.users = USERS;
     fixture.detectChanges();
   });
 
@@ -29,19 +30,12 @@ describe('TableUsersComponent', () => {
   });
 
   it('debería renderizar una fila por cada usuario', () => {
-    component.users = USERS;
-    fixture.detectChanges();
-
     const rows = fixture.debugElement.queryAll(By.css('tbody tr'));
     expect(rows.length).toBe(component.users.length);
   });
 
   it('debería mostrar los datos del usuario en cada columna', () => {
-    component.users = USERS;
-    fixture.detectChanges();
-
     const rows = fixture.debugElement.queryAll(By.css('tbody tr'));
-
     rows.forEach((row, index) => {
       const columns = row.queryAll(By.css('th, td'));
       const user = component.users[index];

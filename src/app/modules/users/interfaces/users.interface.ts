@@ -37,7 +37,7 @@ export interface User {
   email: string;
 
   /** Carrera o ingeniería del usuario */
-  engineering: Engineering;
+  engineering: UserEngineering;
 }
 
 /**
@@ -55,7 +55,7 @@ export interface User {
  *
  * @example
  * ```ts
- * const carrera: Engineering = 'Electronica';
+ * const carrera: UserEngineering = 'Electronica';
  * ```
  */
-export type Engineering = 'Sistemas' | 'Electronica' | 'Biomedica' | 'Industrial' | 'Ambiental';
+export type UserEngineering = 'Sistemas' | 'Electronica' | 'Biomedica' | 'Industrial' | 'Ambiental';

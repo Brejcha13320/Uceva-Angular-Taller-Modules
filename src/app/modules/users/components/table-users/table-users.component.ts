@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BadgeType } from '../../../shared/interfaces/badge.interface';
-import { Engineering, User } from '../../interfaces/users.interface';
+import { UserEngineering, User } from '../../interfaces/users.interface';
 
 /**
  * Componente de tabla de usuarios.
@@ -38,7 +38,7 @@ export class TableUsersComponent {
   @Input() users: User[] = [];
   /**
    * Mapeo de ingenierias de usuarios a tipos de Badge.
-   * @type {Record<Category, BadgeType>}
+   * @type {Record<UserEngineering, BadgeType>}
    * @remarks
    * Se utiliza para asignar colores de badges a cada ingenieria:
    * - 'Sistemas' → 'success' (verde)
@@ -50,7 +50,7 @@ export class TableUsersComponent {
    * Esto permite que en la tabla cada usuario tenga un badge visual que indique su ingenieria
    * de forma clara para el usuario.
    */
-  engineeringMap: Record<Engineering, BadgeType> = {
+  engineeringMap: Record<UserEngineering, BadgeType> = {
     'Sistemas' : 'success',
     'Electronica': 'primary',
     'Biomedica': 'warning',

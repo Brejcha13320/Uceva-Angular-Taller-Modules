@@ -20,7 +20,6 @@ describe('ListUsersComponent', () => {
 
     fixture = TestBed.createComponent(ListUsersComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     usersService = TestBed.inject(UsersService);
   });
 
@@ -30,19 +29,19 @@ describe('ListUsersComponent', () => {
 
   it('debería llamar a getAllUsers al iniciar', () => {
     const spyGetAllUsers = jest.spyOn(usersService, 'getAllUsers').mockReturnValue(of(USERS));
-    component.ngOnInit();
+    fixture.detectChanges();
     expect(spyGetAllUsers).toHaveBeenCalled();
   });
 
   it('debería asignar los usuarios recibidos del servicio', () => {
     jest.spyOn(usersService, 'getAllUsers').mockReturnValue(of(USERS));
-    component.ngOnInit();
+    fixture.detectChanges();
     expect(component.users).toEqual(USERS);
   });
 
   it('debería pasar los usuarios al componente table-users', () => {
     jest.spyOn(usersService, 'getAllUsers').mockReturnValue(of(USERS));
-    component.ngOnInit();
+    fixture.detectChanges();
     const tableComponent = fixture.debugElement
       .query(By.directive(TableUsersComponent))
       .componentInstance;
@@ -56,7 +55,7 @@ describe('ListUsersComponent', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     jest.spyOn(usersService, 'getAllUsers').mockReturnValue(throwError(() => errorResponse));
 
-    component.ngOnInit();
+    fixture.detectChanges();
 
     expect(usersService.getAllUsers).toHaveBeenCalled();
     expect(console.error).toHaveBeenCalledWith(errorResponse);

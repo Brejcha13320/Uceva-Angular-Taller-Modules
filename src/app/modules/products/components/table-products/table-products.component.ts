@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Category, Product } from '../../interfaces/products.interface';
+import { ProductCategory, Product } from '../../interfaces/products.interface';
 import { BadgeType } from '../../../shared/interfaces/badge.interface';
 
 /**
@@ -38,7 +38,7 @@ export class TableProductsComponent {
   @Input() products: Product[] = [];
   /**
    * Mapeo de categorías de productos a tipos de Badge.
-   * @type {Record<Category, BadgeType>}
+   * @type {Record<ProductCategory, BadgeType>}
    * @remarks
    * Se utiliza para asignar colores de badges a cada categoría:
    * - 'Carnes' → 'danger' (rojo)
@@ -49,7 +49,7 @@ export class TableProductsComponent {
    * Esto permite que en la tabla cada producto tenga un badge visual que indique su categoría
    * de forma clara para el usuario.
    */
-  categoryMap: Record<Category, BadgeType> = {
+  categoryMap: Record<ProductCategory, BadgeType> = {
     'Carnes' : 'danger',
     'Frutas': 'warning',
     'Lacteos': 'primary',

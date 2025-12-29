@@ -1,10 +1,9 @@
+import { CurrencyPipe } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TableProductsComponent } from './table-products.component';
 import { By } from '@angular/platform-browser';
 import { PRODUCTS } from '../../../../core/config/products.config';
 import { BadgeComponent } from '../../../shared/components/badge/badge.component';
-import { CurrencyPipe } from '@angular/common';
+import { TableProductsComponent } from './table-products.component';
 
 describe('TableProductsComponent', () => {
   let component: TableProductsComponent;
@@ -18,6 +17,7 @@ describe('TableProductsComponent', () => {
 
     fixture = TestBed.createComponent(TableProductsComponent);
     component = fixture.componentInstance;
+    component.products = PRODUCTS;
     fixture.detectChanges();
   });
 
@@ -31,19 +31,12 @@ describe('TableProductsComponent', () => {
   });
 
   it('debería renderizar una fila por cada producto', () => {
-    component.products = PRODUCTS;
-    fixture.detectChanges();
-
     const rows = fixture.debugElement.queryAll(By.css('tbody tr'));
     expect(rows.length).toBe(component.products.length);
   });
 
   it('debería mostrar los datos del producto en cada columna', () => {
-    component.products = PRODUCTS;
-    fixture.detectChanges();
-
     const rows = fixture.debugElement.queryAll(By.css('tbody tr'));
-
     rows.forEach((row, index) => {
       const columns = row.queryAll(By.css('th, td'));
       const product = component.products[index];
